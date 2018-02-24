@@ -12,8 +12,9 @@
 
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
+<% commenter = User.find(comment.user_id) %>
   <p>
-    <strong>Comment:</strong>
+    <strong><%= commenter.email %>:</strong>
     <%= comment.comment %>
   </p>
 <% end %>
