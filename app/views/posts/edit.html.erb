@@ -1,9 +1,9 @@
 <h1>Editing Post</h1>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && (current_user.id == @post.user.id) %>
   <%= render 'form', post: @post %>
 <% else %>
-  <p>You need to be signed in to edit a post </p>
+  <p>Is this your post? Log in to edit it!</p>
 <% end %>
 
 <%= link_to 'Show', @post %> |
